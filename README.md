@@ -1,1 +1,1 @@
-# MyPersonalPage
+# FG Joomla Extensions
