@@ -229,13 +229,32 @@
     }
 
     .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
-    .icon {
-      width: 44px;
-      height: 44px;
+    .project-logo {
+      width: 66px;
+      height: 66px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border-radius: 12px;
+      padding: 7px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.96);
+      overflow: hidden;
+    }
+
+    .project-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .project-logo .logo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      border-radius: 9px;
       background: var(--accent-soft);
       color: var(--accent);
       font-weight: 900;
@@ -540,6 +559,7 @@
         name: "FG AutoLightbox",
         category: "Content",
         icon: "▣",
+        logo: "https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png",
         featured: true,
         compatibility: ["J4", "J5", "J6", "J3.10"],
         description: "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
@@ -550,6 +570,7 @@
         name: "FG Backend LangSwitcher",
         category: "Administration",
         icon: "文",
+        logo: "https://raw.githubusercontent.com/ferino75/pkg_fgbackendlangswitcher/master/assets/logo.png",
         compatibility: ["J4", "J5", "J6"],
         description: "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
         tags: ["Joomla 4–6"]
@@ -559,6 +580,7 @@
         name: "FG Admin Login Customizer",
         category: "Administration",
         icon: "⌁",
+        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgadminlogincustom/master/assets/logo.png",
         compatibility: ["J6"],
         description: "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
         tags: ["Joomla 6"]
@@ -568,6 +590,7 @@
         name: "FG Offline IP Whitelist",
         category: "Security",
         icon: "◆",
+        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgofflineipwhitelist/master/assets/logo.png",
         compatibility: ["J4", "J5", "J6"],
         description: "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
         tags: ["IPv4 · IPv6 · CIDR"]
@@ -577,6 +600,7 @@
         name: "FG Email Remover",
         category: "Privacy",
         icon: "@",
+        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/master/assets/logo.png",
         compatibility: ["J3.10", "J4", "J5", "J6"],
         description: "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
         tags: ["Joomla 3.10–6"]
@@ -586,6 +610,7 @@
         name: "FG Strip Comments",
         category: "Administration",
         icon: "⌘",
+        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/logo.png",
         compatibility: ["J6"],
         description: "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
         tags: ["Joomla 6"]
@@ -627,7 +652,16 @@
       return `
         <article class="card ${project.featured ? "featured" : ""}">
           <div class="card-top">
-            <div class="icon" aria-hidden="true">${escapeHtml(project.icon)}</div>
+            <div class="project-logo">
+              <img
+                src="${escapeHtml(project.logo)}"
+                alt="${escapeHtml(project.name)} logo"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+              >
+              <span class="logo-fallback" aria-hidden="true">${escapeHtml(project.icon)}</span>
+            </div>
             <div class="badges">
               <span class="badge accent">${escapeHtml(project.category)}</span>
               ${project.tags.map(tag => `<span class="badge">${escapeHtml(tag)}</span>`).join("")}
