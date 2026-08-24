@@ -47,6 +47,7 @@ jobs:
               let releaseTag = null;
               let releaseHtmlUrl = null;
               let releaseZipUrl = null;
+              let downloadCount = 0;
 
               try {
                 const release = await github.rest.repos.getLatestRelease({ owner, repo });
@@ -57,6 +58,20 @@ jobs:
                 if (error.status !== 404) throw error;
               }
 
+              // Sum all attached release asset downloads across the repository.
+              // GitHub-generated "Source code (zip/tar.gz)" archives are not assets
+              // and therefore are not included in this metric.
+              const releases = await github.paginate(
+                github.rest.repos.listReleases,
+                { owner, repo, per_page: 100 }
+              );
+
+              for (const release of releases) {
+                for (const asset of release.assets || []) {
+                  downloadCount += asset.download_count || 0;
+                }
+              }
+
               projects[repo] = {
                 html_url: data.html_url,
                 stargazers_count: data.stargazers_count,
@@ -64,7 +79,8 @@ jobs:
                 language: data.language,
                 release_tag: releaseTag,
                 release_html_url: releaseHtmlUrl,
-                release_zip_url: releaseZipUrl
+                release_zip_url: releaseZipUrl,
+                download_count: downloadCount
               };
             }
 

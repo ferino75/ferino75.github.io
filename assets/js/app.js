@@ -86,11 +86,19 @@ function formatDate(value) {
   return new Intl.DateTimeFormat(undefined,{year:"numeric",month:"short",day:"numeric"}).format(d);
 }
 
+function formatNumber(value) {
+  const number = Number(value ?? 0);
+  return Number.isFinite(number)
+    ? new Intl.NumberFormat().format(number)
+    : "0";
+}
+
 function cardTemplate(project, repoData = {}) {
   const repoUrl = repoData.html_url || `https://github.com/ferino75/${project.repo}`;
   const release = repoData.release_tag || "No release";
   const language = repoData.language || "PHP";
   const stars = repoData.stargazers_count ?? 0;
+  const downloads = repoData.download_count ?? 0;
   const updated = formatDate(repoData.updated_at);
 
   const preview = project.preview
@@ -130,6 +138,7 @@ function cardTemplate(project, repoData = {}) {
       <div class="meta">
         <span><strong>${escapeHtml(release)}</strong> latest release</span>
         <span>★ ${escapeHtml(stars)}</span>
+        <span>↓ ${escapeHtml(formatNumber(downloads))} downloads</span>
         <span>${escapeHtml(language)}</span>
         <span>Updated ${escapeHtml(updated)}</span>
       </div>
