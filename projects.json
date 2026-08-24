@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-24T10:00:37.602Z"
+    "generated_at": "2026-08-24T13:12:30.109Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -21,7 +21,7 @@
       "release_tag": "v1.2.19",
       "release_html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher/releases/tag/v1.2.19",
       "release_zip_url": "https://api.github.com/repos/ferino75/pkg_fgbackendlangswitcher/zipball/v1.2.19",
-      "download_count": 9
+      "download_count": 11
     },
     "plg_system_fgadminlogincustom": {
       "html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom",
