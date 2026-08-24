@@ -1,0 +1,86 @@
+name: Update project data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/update-projects.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Generate projects.json
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require("fs");
+
+            const owner = "ferino75";
+            const repos = [
+              "plg_content_fgautolightbox",
+              "pkg_fgbackendlangswitcher",
+              "plg_system_fgadminlogincustom",
+              "plg_system_fgofflineipwhitelist",
+              "plg_system_fgemailremover",
+              "plg_system_fgstripcomments"
+            ];
+
+            const output = {
+              _meta: {
+                generated_at: new Date().toISOString()
+              }
+            };
+
+            for (const repo of repos) {
+              const { data } = await github.rest.repos.get({ owner, repo });
+
+              let releaseTag = null;
+              try {
+                const release = await github.rest.repos.getLatestRelease({ owner, repo });
+                releaseTag = release.data.tag_name || null;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+
+              output[repo] = {
+                html_url: data.html_url,
+                stargazers_count: data.stargazers_count,
+                updated_at: data.updated_at,
+                language: data.language,
+                release_tag: releaseTag
+              };
+            }
+
+            fs.writeFileSync(
+              "projects.json",
+              JSON.stringify(output, null, 2) + "\n",
+              "utf8"
+            );
+
+      - name: Commit updated data
+        shell: bash
+        run: |
+          if git diff --quiet -- projects.json; then
+            echo "No project data changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add projects.json
+          git commit -m "Update project data"
+          git push
