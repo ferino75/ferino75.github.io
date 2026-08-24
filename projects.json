@@ -1,47 +1,47 @@
 {
   "_meta": {
-    "generated_at": null
+    "generated_at": "2026-08-24T07:27:38.268Z"
   },
   "plg_content_fgautolightbox": {
     "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-23T16:46:51Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "v2.3.8"
   },
   "pkg_fgbackendlangswitcher": {
     "html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-23T22:32:32Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "v1.2.19"
   },
   "plg_system_fgadminlogincustom": {
     "html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-22T11:20:27Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "v1.18.0"
   },
   "plg_system_fgofflineipwhitelist": {
     "html_url": "https://github.com/ferino75/plg_system_fgofflineipwhitelist",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-17T20:26:59Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "v1.1.3"
   },
   "plg_system_fgemailremover": {
     "html_url": "https://github.com/ferino75/plg_system_fgemailremover",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-17T12:37:47Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "j46-v1.4.0"
   },
   "plg_system_fgstripcomments": {
     "html_url": "https://github.com/ferino75/plg_system_fgstripcomments",
     "stargazers_count": 0,
-    "updated_at": null,
+    "updated_at": "2026-08-14T20:04:14Z",
     "language": "PHP",
-    "release_tag": null
+    "release_tag": "v2.0.1"
   }
 }
