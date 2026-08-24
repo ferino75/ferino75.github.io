@@ -521,8 +521,8 @@
           <div class="section-kicker">Open source</div>
           <h2>Developed and maintained on GitHub.</h2>
           <p>
-            Repository information on this page is refreshed directly from GitHub.
-            Latest release, stars and update information are loaded automatically when available.
+            Repository information on this page is refreshed automatically by GitHub Actions.
+            Latest release, stars and update information are served from a local data file for reliable loading.
           </p>
           <a class="btn btn-primary" href="https://github.com/ferino75?tab=repositories" target="_blank" rel="noopener">
             Visit GitHub ↗
@@ -706,56 +706,45 @@
       `).join("");
     }
 
-    async function fetchJson(url) {
-      const response = await fetch(url, {
-        headers: { "Accept": "application/vnd.github+json" }
-      });
-      if (!response.ok) throw new Error(`GitHub API ${response.status}`);
-      return response.json();
-    }
-
     async function loadGithubData() {
       renderProjects();
       renderCompatibility();
 
       try {
-        // One request obtains all public repositories; only the six portfolio
-        // repositories are then selected locally.
-        const repos = await fetchJson(
-          "https://api.github.com/users/ferino75/repos?per_page=100&sort=updated"
-        );
+        const response = await fetch("./projects.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`projects.json ${response.status}`);
 
-        const repoMap = Object.fromEntries(
-          repos
-            .filter(repo => projects.some(project => project.repo === repo.name))
-            .map(repo => [repo.name, repo])
-        );
+        const data = await response.json();
+        const repoMap = {};
 
-        // Release data is requested only for the six featured repositories.
-        await Promise.all(projects.map(async project => {
-          try {
-            const releases = await fetchJson(
-              `https://api.github.com/repos/ferino75/${encodeURIComponent(project.repo)}/releases/latest`
-            );
-            if (repoMap[project.repo]) repoMap[project.repo].release = releases;
-          } catch {
-            // A repository may have no GitHub release. This is not an error
-            // for the portfolio; the card simply shows "No release".
-          }
-        }));
+        for (const project of projects) {
+          const item = data[project.repo];
+          if (!item) continue;
+
+          repoMap[project.repo] = {
+            html_url: item.html_url || `https://github.com/ferino75/${project.repo}`,
+            stargazers_count: item.stargazers_count ?? 0,
+            updated_at: item.updated_at || null,
+            language: item.language || "PHP",
+            release: item.release_tag ? { tag_name: item.release_tag } : null
+          };
+        }
 
         renderProjects(repoMap);
 
-        const count = Object.keys(repoMap).length;
+        const generated = data._meta?.generated_at
+          ? ` · data refreshed ${formatDate(data._meta.generated_at)}`
+          : "";
+
         apiStatus.innerHTML = `
           <span class="status-dot"></span>
-          <span>GitHub data updated · ${count} repositories connected</span>
+          <span>Repository data loaded${generated}</span>
         `;
       } catch (error) {
         renderProjects();
         apiStatus.innerHTML = `
           <span class="status-dot"></span>
-          <span>Live GitHub data is temporarily unavailable · static project data shown</span>
+          <span>Repository data is temporarily unavailable · static project data shown</span>
         `;
       }
     }
