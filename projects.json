@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-24T13:12:30.109Z"
+    "generated_at": "2026-08-24T18:58:27.440Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -16,12 +16,12 @@
     "pkg_fgbackendlangswitcher": {
       "html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher",
       "stargazers_count": 0,
-      "updated_at": "2026-08-23T22:32:32Z",
+      "updated_at": "2026-08-24T18:00:15Z",
       "language": "PHP",
-      "release_tag": "v1.2.19",
-      "release_html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher/releases/tag/v1.2.19",
-      "release_zip_url": "https://api.github.com/repos/ferino75/pkg_fgbackendlangswitcher/zipball/v1.2.19",
-      "download_count": 11
+      "release_tag": "v1.2.20",
+      "release_html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher/releases/tag/v1.2.20",
+      "release_zip_url": "https://api.github.com/repos/ferino75/pkg_fgbackendlangswitcher/zipball/v1.2.20",
+      "download_count": 13
     },
     "plg_system_fgadminlogincustom": {
       "html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom",
