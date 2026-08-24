@@ -17,9 +17,9 @@
       --border-hover: rgba(255,255,255,.18);
       --text: #f2f5f7;
       --muted: #9ca8b5;
-      --accent: #63d36f;
-      --accent-strong: #42c957;
-      --accent-soft: rgba(99,211,111,.11);
+      --accent: #4da3ff;
+      --accent-strong: #2f8ff5;
+      --accent-soft: rgba(77,163,255,.11);
       --shadow: 0 20px 60px rgba(0,0,0,.28);
       --radius: 18px;
       --max: 1160px;
@@ -34,9 +34,9 @@
       --border-hover: rgba(15,25,20,.20);
       --text: #162019;
       --muted: #5f6d65;
-      --accent: #249b39;
-      --accent-strong: #18872d;
-      --accent-soft: rgba(36,155,57,.09);
+      --accent: #1677d2;
+      --accent-strong: #0d64b8;
+      --accent-soft: rgba(22,119,210,.09);
       --shadow: 0 20px 60px rgba(28,55,38,.10);
     }
 
@@ -45,7 +45,7 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 75% 0%, rgba(99,211,111,.10), transparent 32rem),
+        radial-gradient(circle at 75% 0%, rgba(77,163,255,.10), transparent 32rem),
         radial-gradient(circle at 0% 30%, rgba(72,132,255,.07), transparent 30rem),
         var(--bg);
       color: var(--text);
@@ -116,7 +116,7 @@
       align-items: center;
       gap: 8px;
       padding: 6px 11px;
-      border: 1px solid rgba(99,211,111,.25);
+      border: 1px solid rgba(77,163,255,.25);
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
@@ -224,7 +224,7 @@
       grid-column: span 2;
       min-height: 290px;
       background:
-        radial-gradient(circle at 100% 0%, rgba(99,211,111,.13), transparent 18rem),
+        radial-gradient(circle at 100% 0%, rgba(77,163,255,.13), transparent 18rem),
         var(--panel);
     }
 
@@ -252,9 +252,9 @@
       white-space: nowrap;
     }
 
-    .badge.green {
+    .badge.accent {
       color: var(--accent);
-      border-color: rgba(99,211,111,.22);
+      border-color: rgba(77,163,255,.22);
       background: var(--accent-soft);
     }
 
@@ -324,10 +324,10 @@
 
     .open-source {
       padding: 44px;
-      border: 1px solid rgba(99,211,111,.22);
+      border: 1px solid rgba(77,163,255,.22);
       border-radius: 22px;
       background:
-        radial-gradient(circle at 90% 10%, rgba(99,211,111,.13), transparent 22rem),
+        radial-gradient(circle at 90% 10%, rgba(77,163,255,.13), transparent 22rem),
         var(--panel);
       text-align: center;
     }
@@ -543,7 +543,7 @@
         featured: true,
         compatibility: ["J4", "J5", "J6", "J3.10"],
         description: "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
-        tags: ["Content", "Joomla 3.10–6"]
+        tags: ["Joomla 3.10–6"]
       },
       {
         repo: "pkg_fgbackendlangswitcher",
@@ -552,7 +552,7 @@
         icon: "文",
         compatibility: ["J4", "J5", "J6"],
         description: "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
-        tags: ["Administration", "Joomla 4–6"]
+        tags: ["Joomla 4–6"]
       },
       {
         repo: "plg_system_fgadminlogincustom",
@@ -561,7 +561,7 @@
         icon: "⌁",
         compatibility: ["J6"],
         description: "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
-        tags: ["Administration", "Joomla 6"]
+        tags: ["Joomla 6"]
       },
       {
         repo: "plg_system_fgofflineipwhitelist",
@@ -570,7 +570,7 @@
         icon: "◆",
         compatibility: ["J4", "J5", "J6"],
         description: "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
-        tags: ["Security", "IPv4 · IPv6 · CIDR"]
+        tags: ["IPv4 · IPv6 · CIDR"]
       },
       {
         repo: "plg_system_fgemailremover",
@@ -579,7 +579,7 @@
         icon: "@",
         compatibility: ["J3.10", "J4", "J5", "J6"],
         description: "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
-        tags: ["Privacy", "Joomla 3.10–6"]
+        tags: ["Joomla 3.10–6"]
       },
       {
         repo: "plg_system_fgstripcomments",
@@ -588,7 +588,7 @@
         icon: "⌘",
         compatibility: ["J6"],
         description: "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
-        tags: ["Administration", "Joomla 6"]
+        tags: ["Joomla 6"]
       }
     ];
 
@@ -629,7 +629,7 @@
           <div class="card-top">
             <div class="icon" aria-hidden="true">${escapeHtml(project.icon)}</div>
             <div class="badges">
-              <span class="badge green">${escapeHtml(project.category)}</span>
+              <span class="badge accent">${escapeHtml(project.category)}</span>
               ${project.tags.map(tag => `<span class="badge">${escapeHtml(tag)}</span>`).join("")}
             </div>
           </div>
@@ -750,7 +750,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     loadGithubData();
-    
   </script>
 </body>
 </html>
