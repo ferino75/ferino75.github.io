@@ -21,7 +21,8 @@ jobs:
       - name: Checkout site
         uses: actions/checkout@v7
 
-      - name: Generate projects.json
+      - name: Generate projects.json only when project data changed
+        id: generate
         uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -38,31 +39,61 @@ jobs:
               "plg_system_fgstripcomments"
             ];
 
-            const output = {
-              _meta: {
-                generated_at: new Date().toISOString()
-              }
-            };
+            const projects = {};
 
             for (const repo of repos) {
               const { data } = await github.rest.repos.get({ owner, repo });
 
               let releaseTag = null;
+              let releaseHtmlUrl = null;
+              let releaseZipUrl = null;
+
               try {
                 const release = await github.rest.repos.getLatestRelease({ owner, repo });
                 releaseTag = release.data.tag_name || null;
+                releaseHtmlUrl = release.data.html_url || null;
+                releaseZipUrl = release.data.zipball_url || null;
               } catch (error) {
                 if (error.status !== 404) throw error;
               }
 
-              output[repo] = {
+              projects[repo] = {
                 html_url: data.html_url,
                 stargazers_count: data.stargazers_count,
                 updated_at: data.updated_at,
                 language: data.language,
-                release_tag: releaseTag
+                release_tag: releaseTag,
+                release_html_url: releaseHtmlUrl,
+                release_zip_url: releaseZipUrl
               };
             }
+
+            let previousProjects = null;
+
+            if (fs.existsSync("projects.json")) {
+              try {
+                const previous = JSON.parse(fs.readFileSync("projects.json", "utf8"));
+                previousProjects = previous.projects || null;
+              } catch {
+                previousProjects = null;
+              }
+            }
+
+            const currentComparable = JSON.stringify(projects);
+            const previousComparable = JSON.stringify(previousProjects);
+
+            if (currentComparable === previousComparable) {
+              core.info("Project metadata did not change; projects.json remains untouched.");
+              core.setOutput("changed", "false");
+              return;
+            }
+
+            const output = {
+              _meta: {
+                generated_at: new Date().toISOString()
+              },
+              projects
+            };
 
             fs.writeFileSync(
               "projects.json",
@@ -70,14 +101,12 @@ jobs:
               "utf8"
             );
 
+            core.setOutput("changed", "true");
+
       - name: Commit updated data
+        if: steps.generate.outputs.changed == 'true'
         shell: bash
         run: |
-          if git diff --quiet -- projects.json; then
-            echo "No project data changes."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 

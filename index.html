@@ -3,15 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FG Joomla Extensions — practical, lightweight Joomla extensions for administration, security, privacy and content management.">
-  <meta name="theme-color" content="#0b0f14">
+
   <title>FG Joomla Extensions</title>
+  <meta name="description" content="Practical, lightweight Joomla extensions for administration, security, privacy and content management.">
+  <meta name="theme-color" content="#0b0f14">
+
+  <link rel="canonical" href="https://ferino75.github.io/">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FG Joomla Extensions">
+  <meta property="og:description" content="Practical, lightweight Joomla extensions for administration, security, privacy and content management.">
+  <meta property="og:url" content="https://ferino75.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png">
+  <meta property="og:image:alt" content="FG Joomla Extensions">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FG Joomla Extensions",
+    "url": "https://ferino75.github.io/",
+    "author": {
+      "@type": "Person",
+      "name": "FG",
+      "url": "https://github.com/ferino75"
+    },
+    "sameAs": ["https://github.com/ferino75"]
+  }
+  </script>
 
   <style>
     :root {
       --bg: #0b0f14;
       --bg-soft: #10161e;
-      --panel: rgba(18, 25, 34, .78);
+      --panel: rgba(18,25,34,.82);
       --panel-solid: #121922;
       --border: rgba(255,255,255,.09);
       --border-hover: rgba(255,255,255,.18);
@@ -26,18 +53,18 @@
     }
 
     [data-theme="light"] {
-      --bg: #f4f7f5;
-      --bg-soft: #eaf0ec;
-      --panel: rgba(255,255,255,.82);
+      --bg: #f4f7f9;
+      --bg-soft: #e9eef4;
+      --panel: rgba(255,255,255,.86);
       --panel-solid: #fff;
-      --border: rgba(15,25,20,.10);
-      --border-hover: rgba(15,25,20,.20);
-      --text: #162019;
-      --muted: #5f6d65;
+      --border: rgba(15,25,35,.10);
+      --border-hover: rgba(15,25,35,.20);
+      --text: #15202b;
+      --muted: #5f6f7d;
       --accent: #1677d2;
       --accent-strong: #0d64b8;
       --accent-soft: rgba(22,119,210,.09);
-      --shadow: 0 20px 60px rgba(28,55,38,.10);
+      --shadow: 0 20px 60px rgba(28,55,80,.10);
     }
 
     * { box-sizing: border-box; }
@@ -45,8 +72,8 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 75% 0%, rgba(77,163,255,.10), transparent 32rem),
-        radial-gradient(circle at 0% 30%, rgba(72,132,255,.07), transparent 30rem),
+        radial-gradient(circle at 76% 0%, rgba(77,163,255,.11), transparent 32rem),
+        radial-gradient(circle at 0% 32%, rgba(72,132,255,.07), transparent 30rem),
         var(--bg);
       color: var(--text);
       font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -88,7 +115,7 @@
       place-items: center;
       border-radius: 10px;
       background: var(--accent);
-      color: #071009;
+      color: #07111c;
       font-weight: 950;
     }
 
@@ -97,8 +124,7 @@
     .nav-links a:hover { color: var(--text); }
 
     .theme-btn {
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: var(--panel);
@@ -106,10 +132,7 @@
       cursor: pointer;
     }
 
-    .hero {
-      padding: 110px 0 90px;
-      text-align: center;
-    }
+    .hero { padding: 105px 0 85px; text-align: center; }
 
     .eyebrow {
       display: inline-flex;
@@ -128,8 +151,7 @@
 
     .eyebrow::before {
       content: "";
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: currentColor;
       box-shadow: 0 0 14px currentColor;
@@ -142,14 +164,13 @@
       line-height: .98;
       letter-spacing: -.055em;
     }
-
     .hero h1 span { color: var(--accent); }
 
     .lead {
       max-width: 720px;
       margin: 0 auto 32px;
       color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem,2vw,1.25rem);
     }
 
     .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
@@ -158,26 +179,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-height: 46px;
-      padding: 0 18px;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
       border-radius: 11px;
       border: 1px solid var(--border);
       font-weight: 750;
       transition: .2s ease;
+      cursor: pointer;
     }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #071009;
-      border-color: var(--accent);
-    }
-
+    .btn-primary { background: var(--accent); color: #07111c; border-color: var(--accent); }
     .btn-secondary { background: var(--panel); }
+    .btn-small { min-height: 38px; padding: 0 12px; font-size: .82rem; }
     .btn:hover { transform: translateY(-2px); border-color: var(--border-hover); }
 
-    section { padding: 72px 0; }
-    .section-head { margin-bottom: 30px; }
+    section { padding: 68px 0; }
+    .section-head { margin-bottom: 28px; }
     .section-kicker {
       color: var(--accent);
       font-size: .8rem;
@@ -185,27 +202,32 @@
       letter-spacing: .1em;
       text-transform: uppercase;
     }
-
     h2 {
       margin: 7px 0 8px;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-size: clamp(1.9rem,4vw,2.8rem);
       line-height: 1.08;
       letter-spacing: -.035em;
     }
+    .section-head p { max-width: 700px; margin: 0; color: var(--muted); }
 
-    .section-head p { max-width: 680px; margin: 0; color: var(--muted); }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+    .filter {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      cursor: pointer;
     }
+    .filter.active, .filter:hover { color: var(--text); border-color: rgba(77,163,255,.38); background: var(--accent-soft); }
+
+    .projects { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 
     .card {
       position: relative;
       display: flex;
       flex-direction: column;
-      min-height: 330px;
+      min-height: 350px;
       padding: 24px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -213,27 +235,19 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
       transition: .22s ease;
+      overflow: hidden;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-    }
-
+    .card:hover { transform: translateY(-5px); border-color: var(--border-hover); }
     .card.featured {
       grid-column: span 2;
-      min-height: 290px;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(77,163,255,.13), transparent 18rem),
-        var(--panel);
+      background: radial-gradient(circle at 100% 0%, rgba(77,163,255,.13), transparent 18rem), var(--panel);
     }
+    .card.hidden { display: none; }
 
     .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
     .project-logo {
-      width: 66px;
-      height: 66px;
-      display: grid;
-      place-items: center;
+      width: 66px; height: 66px;
+      display: grid; place-items: center;
       flex: 0 0 auto;
       padding: 7px;
       border-radius: 14px;
@@ -241,25 +255,7 @@
       background: rgba(255,255,255,.96);
       overflow: hidden;
     }
-
-    .project-logo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .project-logo .logo-fallback {
-      display: none;
-      width: 100%;
-      height: 100%;
-      place-items: center;
-      border-radius: 9px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 900;
-      font-size: 1.15rem;
-    }
+    .project-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
     .badges { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
     .badge {
@@ -270,12 +266,19 @@
       font-size: .72rem;
       white-space: nowrap;
     }
+    .badge.accent { color: var(--accent); border-color: rgba(77,163,255,.22); background: var(--accent-soft); }
 
-    .badge.accent {
-      color: var(--accent);
-      border-color: rgba(77,163,255,.22);
-      background: var(--accent-soft);
+    .preview {
+      margin: 18px 0 0;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+      background: var(--bg-soft);
+      aspect-ratio: 16/7;
+      display: none;
     }
+    .preview.has-image { display: block; }
+    .preview img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
 
     .card h3 { margin: 20px 0 8px; font-size: 1.25rem; line-height: 1.2; }
     .card p { margin: 0; color: var(--muted); }
@@ -289,41 +292,27 @@
       color: var(--muted);
       font-size: .78rem;
     }
-
     .meta strong { color: var(--text); font-weight: 700; }
 
     .card-actions {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
       margin-top: auto;
       padding-top: 16px;
       border-top: 1px solid var(--border);
     }
 
-    .repo-link {
-      color: var(--accent);
-      font-size: .88rem;
-      font-weight: 800;
-    }
+    .compat { margin-right: auto; color: var(--muted); font-size: .76rem; }
 
-    .repo-link:hover { color: var(--accent-strong); }
-    .release { color: var(--muted); font-size: .78rem; }
-
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
+    .principles { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
     .principle {
       padding: 22px;
       border: 1px solid var(--border);
       border-radius: 15px;
       background: var(--panel);
     }
-
     .principle strong { display: block; margin-bottom: 5px; }
     .principle span { color: var(--muted); font-size: .9rem; }
 
@@ -333,11 +322,10 @@
       border-radius: 16px;
       background: var(--panel);
     }
-
     table { width: 100%; border-collapse: collapse; min-width: 650px; }
-    th, td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    th,td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
     th { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; }
-    td:not(:first-child), th:not(:first-child) { text-align: center; }
+    td:not(:first-child),th:not(:first-child) { text-align: center; }
     tr:last-child td { border-bottom: 0; }
     .yes { color: var(--accent); font-weight: 900; }
 
@@ -345,62 +333,28 @@
       padding: 44px;
       border: 1px solid rgba(77,163,255,.22);
       border-radius: 22px;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(77,163,255,.13), transparent 22rem),
-        var(--panel);
+      background: radial-gradient(circle at 90% 10%, rgba(77,163,255,.13), transparent 22rem), var(--panel);
       text-align: center;
     }
+    .open-source p { max-width: 700px; margin: 10px auto 24px; color: var(--muted); }
 
-    .open-source p { max-width: 680px; margin: 10px auto 24px; color: var(--muted); }
-
-    footer {
-      padding: 35px 0 45px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .loading {
-      opacity: .55;
-      animation: pulse 1.2s infinite alternate;
-    }
-
-    @keyframes pulse { to { opacity: .9; } }
+    footer { padding: 35px 0 45px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .status { display: inline-flex; align-items: center; gap: 7px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 
     @media (max-width: 900px) {
-      .projects { grid-template-columns: repeat(2, 1fr); }
+      .projects { grid-template-columns: repeat(2,1fr); }
       .card.featured { grid-column: span 2; }
-      .principles { grid-template-columns: repeat(2, 1fr); }
+      .principles { grid-template-columns: repeat(2,1fr); }
     }
-
     @media (max-width: 650px) {
-      .container { width: min(var(--max), calc(100% - 26px)); }
+      .container { width: min(var(--max),calc(100% - 26px)); }
       .nav-links a { display: none; }
-      .hero { padding: 80px 0 65px; }
-      section { padding: 55px 0; }
-      .projects, .principles { grid-template-columns: 1fr; }
+      .hero { padding: 78px 0 62px; }
+      section { padding: 52px 0; }
+      .projects,.principles { grid-template-columns: 1fr; }
       .card.featured { grid-column: span 1; }
-      .card { min-height: 300px; }
       .open-source { padding: 30px 20px; }
       .footer-row { align-items: flex-start; flex-direction: column; }
     }
@@ -408,371 +362,318 @@
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#">
-        <span class="brand-mark">FG</span>
-        <span>Joomla Extensions</span>
-      </a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">FG</span>
+      <span>Joomla Extensions</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#projects">Projects</a>
+      <a href="#principles">Approach</a>
+      <a href="#compatibility">Compatibility</a>
+      <a href="#github">GitHub</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+  </div>
+</header>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#projects">Projects</a>
-        <a href="#principles">Approach</a>
-        <a href="#compatibility">Compatibility</a>
-        <a href="#github">GitHub</a>
-      </nav>
-
-      <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Open source · Joomla CMS</span>
+      <h1>Practical <span>Joomla</span> extensions.</h1>
+      <p class="lead">
+        Lightweight tools for administration, security, privacy and content management —
+        built to solve specific problems without unnecessary complexity.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">View projects ↓</a>
+        <a class="btn btn-secondary" href="https://github.com/ferino75" target="_blank" rel="noopener">GitHub profile ↗</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow">Open source · Joomla CMS</span>
-        <h1>Practical <span>Joomla</span> extensions.</h1>
-        <p class="lead">
-          Lightweight tools for administration, security, privacy and content management —
-          built to solve specific problems without unnecessary complexity.
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>FG Joomla Extensions</h2>
+        <p>Current releases and repository metadata are refreshed automatically by GitHub Actions and served locally for reliable loading.</p>
+      </div>
+
+      <div class="filters" id="filters" aria-label="Project filters"></div>
+      <div class="projects" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Approach</div>
+        <h2>Built with a few principles in mind.</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><strong>Compatibility</strong><span>Support for the Joomla generations targeted by each extension.</span></div>
+        <div class="principle"><strong>Performance</strong><span>Simple, predictable implementations with attention to runtime overhead.</span></div>
+        <div class="principle"><strong>Security</strong><span>Careful input handling, access control and defensive processing where relevant.</span></div>
+        <div class="principle"><strong>Accessibility</strong><span>Usable interfaces and standards-aware behaviour where the extension requires it.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compatibility">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Compatibility</div>
+        <h2>Joomla version coverage</h2>
+      </div>
+      <div class="matrix-wrap">
+        <table>
+          <thead><tr><th>Extension</th><th>J3.10</th><th>J4</th><th>J5</th><th>J6</th></tr></thead>
+          <tbody id="compatibilityBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="github">
+    <div class="container">
+      <div class="open-source">
+        <div class="section-kicker">Open source</div>
+        <h2>Developed and maintained on GitHub.</h2>
+        <p>Release information is generated by a scheduled GitHub Action. Visitors do not consume the anonymous GitHub API rate limit.</p>
+        <a class="btn btn-primary" href="https://github.com/ferino75?tab=repositories" target="_blank" rel="noopener">Visit GitHub ↗</a>
+        <p id="dataStatus" class="status" style="justify-content:center;margin-top:18px">
+          <span class="status-dot"></span><span>Loading repository data…</span>
         </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projects">View projects ↓</a>
-          <a class="btn btn-secondary" href="https://github.com/ferino75" target="_blank" rel="noopener">GitHub profile ↗</a>
-        </div>
       </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Projects</div>
-          <h2>FG Joomla Extensions</h2>
-          <p>
-            A focused collection of extensions developed around real-world Joomla administration
-            and site-management needs.
-          </p>
-        </div>
-
-        <div class="projects" id="projectGrid">
-          <!-- Cards are generated by JavaScript from the project definitions below. -->
-        </div>
-      </div>
-    </section>
-
-    <section id="principles">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Approach</div>
-          <h2>Built with a few principles in mind.</h2>
-        </div>
-
-        <div class="principles">
-          <div class="principle">
-            <strong>Compatibility</strong>
-            <span>Support for the Joomla generations targeted by each extension.</span>
-          </div>
-          <div class="principle">
-            <strong>Performance</strong>
-            <span>Prefer simple, predictable implementations and avoid unnecessary overhead.</span>
-          </div>
-          <div class="principle">
-            <strong>Security</strong>
-            <span>Careful input handling, access control and defensive processing where relevant.</span>
-          </div>
-          <div class="principle">
-            <strong>Accessibility</strong>
-            <span>Usable interfaces and standards-aware behaviour where the extension requires it.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="compatibility">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Compatibility</div>
-          <h2>Joomla version coverage</h2>
-          <p>
-            Compatibility is intentionally shown per extension rather than implying that every
-            project supports every Joomla release.
-          </p>
-        </div>
-
-        <div class="matrix-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Extension</th>
-                <th>J3.10</th>
-                <th>J4</th>
-                <th>J5</th>
-                <th>J6</th>
-              </tr>
-            </thead>
-            <tbody id="compatibilityBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="github">
-      <div class="container">
-        <div class="open-source">
-          <div class="section-kicker">Open source</div>
-          <h2>Developed and maintained on GitHub.</h2>
-          <p>
-            Repository information on this page is refreshed automatically by GitHub Actions.
-            Latest release, stars and update information are served from a local data file for reliable loading.
-          </p>
-          <a class="btn btn-primary" href="https://github.com/ferino75?tab=repositories" target="_blank" rel="noopener">
-            Visit GitHub ↗
-          </a>
-          <p id="apiStatus" class="status" style="justify-content:center;margin-top:18px">
-            <span class="status-dot"></span>
-            <span>Loading repository data…</span>
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div>FG · Joomla Extensions</div>
-      <div>© <span id="year"></span> · Open source software</div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script>
-    /*
-     * Project configuration.
-     *
-     * The repository names below are the public repositories currently used
-     * for the FG Joomla Extensions portfolio.
-     *
-     * To add a future project, add one object here and it will automatically
-     * receive a card and a row in the compatibility matrix.
-     */
-    const projects = [
-      {
-        repo: "plg_content_fgautolightbox",
-        name: "FG AutoLightbox",
-        category: "Content",
-        icon: "▣",
-        logo: "https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png",
-        featured: true,
-        compatibility: ["J4", "J5", "J6", "J3.10"],
-        description: "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
-        tags: ["Joomla 3.10–6"]
-      },
-      {
-        repo: "pkg_fgbackendlangswitcher",
-        name: "FG Backend LangSwitcher",
-        category: "Administration",
-        icon: "文",
-        logo: "https://raw.githubusercontent.com/ferino75/pkg_fgbackendlangswitcher/master/assets/logo.png",
-        compatibility: ["J4", "J5", "J6"],
-        description: "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
-        tags: ["Joomla 4–6"]
-      },
-      {
-        repo: "plg_system_fgadminlogincustom",
-        name: "FG Admin Login Customizer",
-        category: "Administration",
-        icon: "⌁",
-        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgadminlogincustom/master/assets/logo.png",
-        compatibility: ["J6"],
-        description: "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
-        tags: ["Joomla 6"]
-      },
-      {
-        repo: "plg_system_fgofflineipwhitelist",
-        name: "FG Offline IP Whitelist",
-        category: "Security",
-        icon: "◆",
-        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgofflineipwhitelist/master/assets/logo.png",
-        compatibility: ["J4", "J5", "J6"],
-        description: "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
-        tags: ["IPv4 · IPv6 · CIDR"]
-      },
-      {
-        repo: "plg_system_fgemailremover",
-        name: "FG Email Remover",
-        category: "Privacy",
-        icon: "@",
-        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/master/assets/logo.png",
-        compatibility: ["J3.10", "J4", "J5", "J6"],
-        description: "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
-        tags: ["Joomla 3.10–6"]
-      },
-      {
-        repo: "plg_system_fgstripcomments",
-        name: "FG Strip Comments",
-        category: "Administration",
-        icon: "⌘",
-        logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/logo.png",
-        compatibility: ["J6"],
-        description: "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
-        tags: ["Joomla 6"]
-      }
-    ];
+<footer>
+  <div class="container footer-row">
+    <div>FG · Joomla Extensions</div>
+    <div>© <span id="year"></span> · Open source software</div>
+  </div>
+</footer>
 
-    const projectGrid = document.getElementById("projectGrid");
-    const compatibilityBody = document.getElementById("compatibilityBody");
-    const apiStatus = document.getElementById("apiStatus");
+<script>
+const projects = [
+  {
+    repo: "plg_content_fgautolightbox",
+    name: "FG AutoLightbox",
+    category: "Content",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J3.10","J4","J5","J6"],
+    description: "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
+    tags: ["Joomla 3.10–6"],
+    jed: null,
+    featured: true
+  },
+  {
+    repo: "pkg_fgbackendlangswitcher",
+    name: "FG Backend LangSwitcher",
+    category: "Administration",
+    logo: "https://raw.githubusercontent.com/ferino75/pkg_fgbackendlangswitcher/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J4","J5","J6"],
+    description: "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
+    tags: ["Joomla 4–6"],
+    jed: null
+  },
+  {
+    repo: "plg_system_fgadminlogincustom",
+    name: "FG Admin Login Customizer",
+    category: "Administration",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgadminlogincustom/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J6"],
+    description: "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
+    tags: ["Joomla 6"],
+    jed: null
+  },
+  {
+    repo: "plg_system_fgofflineipwhitelist",
+    name: "FG Offline IP Whitelist",
+    category: "Security",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgofflineipwhitelist/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J4","J5","J6"],
+    description: "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
+    tags: ["IPv4 · IPv6 · CIDR"],
+    jed: null
+  },
+  {
+    repo: "plg_system_fgemailremover",
+    name: "FG Email Remover",
+    category: "Privacy",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J3.10","J4","J5","J6"],
+    description: "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
+    tags: ["Joomla 3.10–6"],
+    jed: "https://extensions.joomla.org/extension/access-a-security/site-security/email-remover/"
+  },
+  {
+    repo: "plg_system_fgstripcomments",
+    name: "FG Strip Comments",
+    category: "Administration",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J5","J6"],
+    description: "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
+    tags: ["Joomla 5–6"],
+    jed: "https://extensions.joomla.org/extension/extension-specific/extensions-specific-non-sorted/strip-comments/"
+  }
+];
 
-    function escapeHtml(value) {
-      return String(value ?? "").replace(/[&<>"']/g, char => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      }[char]));
-    }
+const projectGrid = document.getElementById("projectGrid");
+const compatibilityBody = document.getElementById("compatibilityBody");
+const filters = document.getElementById("filters");
+const dataStatus = document.getElementById("dataStatus");
 
-    function formatDate(value) {
-      if (!value) return "—";
-      const date = new Date(value);
-      if (Number.isNaN(date.getTime())) return "—";
-      return new Intl.DateTimeFormat(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric"
-      }).format(date);
-    }
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[c]));
+}
 
-    function cardTemplate(project, repoData) {
-      const url = repoData?.html_url || `https://github.com/ferino75/${project.repo}`;
-      const stars = repoData ? `★ ${repoData.stargazers_count}` : "GitHub";
-      const updated = repoData ? formatDate(repoData.updated_at) : "—";
-      const release = repoData?.release?.tag_name || "No release";
-      const language = repoData?.language || "PHP";
+function formatDate(value) {
+  if (!value) return "—";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "—";
+  return new Intl.DateTimeFormat(undefined,{year:"numeric",month:"short",day:"numeric"}).format(d);
+}
 
-      return `
-        <article class="card ${project.featured ? "featured" : ""}">
-          <div class="card-top">
-            <div class="project-logo">
-              <img
-                src="${escapeHtml(project.logo)}"
-                alt="${escapeHtml(project.name)} logo"
-                loading="lazy"
-                decoding="async"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-              >
-              <span class="logo-fallback" aria-hidden="true">${escapeHtml(project.icon)}</span>
-            </div>
-            <div class="badges">
-              <span class="badge accent">${escapeHtml(project.category)}</span>
-              ${project.tags.map(tag => `<span class="badge">${escapeHtml(tag)}</span>`).join("")}
-            </div>
-          </div>
+function cardTemplate(project, repoData = {}) {
+  const repoUrl = repoData.html_url || `https://github.com/ferino75/${project.repo}`;
+  const release = repoData.release_tag || "No release";
+  const language = repoData.language || "PHP";
+  const stars = repoData.stargazers_count ?? 0;
+  const updated = formatDate(repoData.updated_at);
 
-          <h3>${escapeHtml(project.name)}</h3>
-          <p>${escapeHtml(project.description)}</p>
+  const preview = project.preview
+    ? `<div class="preview has-image"><img src="${escapeHtml(project.preview)}" alt="${escapeHtml(project.name)} screenshot" loading="lazy" decoding="async"></div>`
+    : "";
 
-          <div class="card-spacer"></div>
+  const downloadButton = repoData.release_zip_url
+    ? `<a class="btn btn-primary btn-small" href="${escapeHtml(repoData.release_zip_url)}">Download ZIP</a>`
+    : "";
 
-          <div class="meta">
-            <span><strong>${escapeHtml(release)}</strong> latest release</span>
-            <span>${escapeHtml(stars)}</span>
-            <span>${escapeHtml(language)}</span>
-            <span>Updated ${escapeHtml(updated)}</span>
-          </div>
+  const releaseButton = repoData.release_html_url
+    ? `<a class="btn btn-secondary btn-small" href="${escapeHtml(repoData.release_html_url)}" target="_blank" rel="noopener">Release</a>`
+    : "";
 
-          <div class="card-actions">
-            <span class="release">${project.compatibility.join(" · ")}</span>
-            <a class="repo-link" href="${escapeHtml(url)}" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-      `;
-    }
+  const jedButton = project.jed
+    ? `<a class="btn btn-secondary btn-small" href="${escapeHtml(project.jed)}" target="_blank" rel="noopener">JED</a>`
+    : "";
 
-    function renderProjects(repoMap = {}) {
-      projectGrid.innerHTML = projects.map(project =>
-        cardTemplate(project, repoMap[project.repo])
-      ).join("");
-    }
+  return `
+    <article class="card ${project.featured ? "featured" : ""}" data-category="${escapeHtml(project.category)}">
+      <div class="card-top">
+        <div class="project-logo">
+          <img src="${escapeHtml(project.logo)}" alt="${escapeHtml(project.name)} logo" loading="lazy" decoding="async">
+        </div>
+        <div class="badges">
+          <span class="badge accent">${escapeHtml(project.category)}</span>
+          ${project.tags.map(t => `<span class="badge">${escapeHtml(t)}</span>`).join("")}
+        </div>
+      </div>
 
-    function renderCompatibility() {
-      compatibilityBody.innerHTML = projects.map(project => `
-        <tr>
-          <td>${escapeHtml(project.name)}</td>
-          <td>${project.compatibility.includes("J3.10") ? '<span class="yes">✓</span>' : "—"}</td>
-          <td>${project.compatibility.includes("J4") ? '<span class="yes">✓</span>' : "—"}</td>
-          <td>${project.compatibility.includes("J5") ? '<span class="yes">✓</span>' : "—"}</td>
-          <td>${project.compatibility.includes("J6") ? '<span class="yes">✓</span>' : "—"}</td>
-        </tr>
-      `).join("");
-    }
+      ${preview}
 
-    async function loadGithubData() {
-      renderProjects();
-      renderCompatibility();
+      <h3>${escapeHtml(project.name)}</h3>
+      <p>${escapeHtml(project.description)}</p>
+      <div class="card-spacer"></div>
 
-      try {
-        const response = await fetch("./projects.json", { cache: "no-store" });
-        if (!response.ok) throw new Error(`projects.json ${response.status}`);
+      <div class="meta">
+        <span><strong>${escapeHtml(release)}</strong> latest release</span>
+        <span>★ ${escapeHtml(stars)}</span>
+        <span>${escapeHtml(language)}</span>
+        <span>Updated ${escapeHtml(updated)}</span>
+      </div>
 
-        const data = await response.json();
-        const repoMap = {};
+      <div class="card-actions">
+        <span class="compat">${project.compatibility.join(" · ")}</span>
+        ${downloadButton}
+        ${releaseButton}
+        ${jedButton}
+        <a class="btn btn-secondary btn-small" href="${escapeHtml(repoUrl)}" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  `;
+}
 
-        for (const project of projects) {
-          const item = data[project.repo];
-          if (!item) continue;
+function renderProjects(repoMap = {}) {
+  projectGrid.innerHTML = projects.map(p => cardTemplate(p, repoMap[p.repo] || {})).join("");
+}
 
-          repoMap[project.repo] = {
-            html_url: item.html_url || `https://github.com/ferino75/${project.repo}`,
-            stargazers_count: item.stargazers_count ?? 0,
-            updated_at: item.updated_at || null,
-            language: item.language || "PHP",
-            release: item.release_tag ? { tag_name: item.release_tag } : null
-          };
-        }
+function renderCompatibility() {
+  compatibilityBody.innerHTML = projects.map(p => `
+    <tr>
+      <td>${escapeHtml(p.name)}</td>
+      <td>${p.compatibility.includes("J3.10") ? '<span class="yes">✓</span>' : "—"}</td>
+      <td>${p.compatibility.includes("J4") ? '<span class="yes">✓</span>' : "—"}</td>
+      <td>${p.compatibility.includes("J5") ? '<span class="yes">✓</span>' : "—"}</td>
+      <td>${p.compatibility.includes("J6") ? '<span class="yes">✓</span>' : "—"}</td>
+    </tr>
+  `).join("");
+}
 
-        renderProjects(repoMap);
+function renderFilters() {
+  const categories = ["All", ...new Set(projects.map(p => p.category))];
+  filters.innerHTML = categories.map((c,i) =>
+    `<button class="filter ${i===0 ? "active" : ""}" type="button" data-filter="${escapeHtml(c)}">${escapeHtml(c)}</button>`
+  ).join("");
 
-        const generated = data._meta?.generated_at
-          ? ` · data refreshed ${formatDate(data._meta.generated_at)}`
-          : "";
-
-        apiStatus.innerHTML = `
-          <span class="status-dot"></span>
-          <span>Repository data loaded${generated}</span>
-        `;
-      } catch (error) {
-        renderProjects();
-        apiStatus.innerHTML = `
-          <span class="status-dot"></span>
-          <span>Repository data is temporarily unavailable · static project data shown</span>
-        `;
-      }
-    }
-
-    // Theme preference
-    const themeToggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("fg-theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-
-    function setTheme(theme) {
-      document.documentElement.dataset.theme = theme;
-      localStorage.setItem("fg-theme", theme);
-      themeToggle.textContent = theme === "light" ? "☀" : "☾";
-      themeToggle.setAttribute(
-        "aria-label",
-        theme === "light" ? "Switch to dark theme" : "Switch to light theme"
-      );
-    }
-
-    setTheme(savedTheme || (prefersLight ? "light" : "dark"));
-
-    themeToggle.addEventListener("click", () => {
-      setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
+  filters.addEventListener("click", e => {
+    const button = e.target.closest(".filter");
+    if (!button) return;
+    document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+    const category = button.dataset.filter;
+    document.querySelectorAll(".card[data-category]").forEach(card => {
+      card.classList.toggle("hidden", category !== "All" && card.dataset.category !== category);
     });
+  });
+}
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+async function loadProjectData() {
+  renderProjects();
+  renderCompatibility();
+  renderFilters();
 
-    loadGithubData();
-  </script>
+  try {
+    const response = await fetch("./projects.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`projects.json ${response.status}`);
+    const data = await response.json();
+    renderProjects(data.projects || {});
+
+    const generated = data._meta?.generated_at ? formatDate(data._meta.generated_at) : "unknown";
+    dataStatus.innerHTML = `<span class="status-dot"></span><span>Repository data refreshed ${escapeHtml(generated)}</span>`;
+  } catch {
+    dataStatus.innerHTML = `<span class="status-dot"></span><span>Live repository metadata unavailable · static project information shown</span>`;
+  }
+}
+
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("fg-theme");
+const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("fg-theme", theme);
+  themeToggle.textContent = theme === "light" ? "☀" : "☾";
+  themeToggle.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
+}
+setTheme(savedTheme || (prefersLight ? "light" : "dark"));
+themeToggle.addEventListener("click", () => setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light"));
+
+document.getElementById("year").textContent = new Date().getFullYear();
+loadProjectData();
+</script>
 </body>
 </html>
