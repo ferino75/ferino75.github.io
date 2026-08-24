@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "generated_at": null
+  },
+  "plg_content_fgautolightbox": {
+    "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  },
+  "pkg_fgbackendlangswitcher": {
+    "html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  },
+  "plg_system_fgadminlogincustom": {
+    "html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  },
+  "plg_system_fgofflineipwhitelist": {
+    "html_url": "https://github.com/ferino75/plg_system_fgofflineipwhitelist",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  },
+  "plg_system_fgemailremover": {
+    "html_url": "https://github.com/ferino75/plg_system_fgemailremover",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  },
+  "plg_system_fgstripcomments": {
+    "html_url": "https://github.com/ferino75/plg_system_fgstripcomments",
+    "stargazers_count": 0,
+    "updated_at": null,
+    "language": "PHP",
+    "release_tag": null
+  }
+}
