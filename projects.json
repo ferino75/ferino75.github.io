@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "generated_at": "2026-08-24T18:58:27.440Z"
+    "generated_at": "2026-08-25T01:51:37.646Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
       "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
       "stargazers_count": 0,
-      "updated_at": "2026-08-23T16:46:51Z",
+      "updated_at": "2026-08-24T19:12:07Z",
       "language": "PHP",
       "release_tag": "v2.3.8",
       "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.8",
