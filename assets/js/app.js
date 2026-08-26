@@ -166,7 +166,16 @@ function cardTemplate(project, repoData = {}) {
       </div>
 
       <div class="card-actions">
-        <span class="compat">${project.compatibility.join(" · ")}</span>
+        <span class="compat">
+          <img
+            src="https://tm.joomla.org/images/logos/Official_Logos/Joomla-flat-logo-en.png?i=982"
+            alt="Joomla"
+            class="joomla-compat-logo"
+            loading="lazy"
+            decoding="async"
+          >
+          <span>${project.compatibility.map(version => version.replace(/^J/, "")).join(" · ")}</span>
+        </span>
         ${downloadButton}
         ${releaseButton}
         ${jedButton}
