@@ -1,4 +1,4 @@
-# FG Joomla Extensions site — v2
+# FG Joomla Extensions site
 
 Deploy these files to the `master` branch of `ferino75/ferino75.github.io`.
 
