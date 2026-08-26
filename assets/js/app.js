@@ -67,6 +67,17 @@ const projects = [
     jed: null
   },
   {
+    repo: "plg_system_fgremovegenerator",
+    name: "FG Remove Generator",
+    category: "Security",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgremovegenerator/master/assets/logo.png",
+    preview: "https://raw.githubusercontent.com/ferino75/plg_system_fgremovegenerator/master/assets/banner.png",
+    compatibility: ["J4","J5","J6"],
+    description: "Removes Joomla generator metadata and optional fingerprinting HTTP response headers to reduce passive CMS and platform identification.",
+    tags: ["Joomla 4–6"],
+    jed: null
+  },
+  {
     repo: "plg_system_fgstripcomments",
     name: "FG Strip Comments",
     category: "Administration",

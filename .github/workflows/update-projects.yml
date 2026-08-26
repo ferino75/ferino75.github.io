@@ -37,6 +37,7 @@ jobs:
               "plg_system_fgofflineipwhitelist",
               "plg_system_fgemailremover",
               "plg_fgeditorswitcher",
+              "plg_system_fgremovegenerator",
               "plg_system_fgstripcomments"
             ];
 
