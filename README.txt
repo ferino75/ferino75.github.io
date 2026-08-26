@@ -1,14 +1,16 @@
-# Joomla compatibility logo update
+# Local Joomla compatibility logo
 
-Replace on ferino75.github.io:
+Upload/replace:
 - index.html
 - assets/css/style.css
 - assets/js/app.js
+- assets/images/joomla.svg
 
-Compatibility in cards will display:
-[Joomla logo] 4 · 5 · 6
+The compatibility row now uses the local file:
+./assets/images/joomla.svg
 
-The project data remain unchanged, e.g. ["J4","J5","J6"].
-Only the visual rendering strips the leading "J".
+Displayed examples:
+[Joomla symbol] 6
+[Joomla symbol] 4 · 5 · 6
 
-The logo URL points to the official Joomla trademark site and is not altered.
+The SVG is the Joomla brand icon from Font Awesome Free.

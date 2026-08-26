@@ -168,7 +168,7 @@ function cardTemplate(project, repoData = {}) {
       <div class="card-actions">
         <span class="compat">
           <img
-            src="https://tm.joomla.org/images/logos/Official_Logos/Joomla-flat-logo-en.png?i=982"
+            src="./assets/images/joomla.svg"
             alt="Joomla"
             class="joomla-compat-logo"
             loading="lazy"
