@@ -6,6 +6,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png",
     preview: null,
     compatibility: ["J3.10","J4","J5","J6"],
+    php: "7.4+ / 8.3+ native",
     description: "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
     tags: ["Joomla 3.10–6"],
     jed: null,
@@ -18,6 +19,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/pkg_fgbackendlangswitcher/master/assets/logo.png",
     preview: null,
     compatibility: ["J4","J5","J6"],
+    php: "7.4+",
     description: "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
     tags: ["Joomla 4–6"],
     jed: null
@@ -29,6 +31,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgadminlogincustom/master/assets/logo.png",
     preview: null,
     compatibility: ["J6"],
+    php: "8.1+",
     description: "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
     tags: ["Joomla 6"],
     jed: null
@@ -40,6 +43,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgofflineipwhitelist/master/assets/logo.png",
     preview: null,
     compatibility: ["J4","J5","J6"],
+    php: "8.0+",
     description: "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
     tags: ["IPv4 · IPv6 · CIDR"],
     jed: null
@@ -51,6 +55,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/master/assets/logo.png",
     preview: "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/refs/heads/master/assets/banner_jed.png",
     compatibility: ["J3.10","J4","J5","J6"],
+    php: "7.4+ / 8.1+ native",
     description: "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
     tags: ["Joomla 3.10–6"],
     jed: "https://extensions.joomla.org/extension/access-a-security/site-security/email-remover/"
@@ -62,6 +67,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_fgeditorswitcher/master/assets/logo.png",
     preview: null,
     compatibility: ["J4","J5","J6"],
+    php: "7.4+",
     description: "Switch between installed Joomla editors directly from the edit screen while preserving unsaved content and your preferred editor choice.",
     tags: ["Joomla 4.2–6"],
     jed: null
@@ -72,9 +78,10 @@ const projects = [
     category: "Security",
     logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgremovegenerator/master/assets/logo.png",
     preview: "https://raw.githubusercontent.com/ferino75/plg_system_fgremovegenerator/master/assets/banner.png",
-    compatibility: ["J4","J5","J6"],
+    compatibility: ["J5","J6"],
+    php: "8.1+",
     description: "Removes Joomla generator metadata and optional fingerprinting HTTP response headers to reduce passive CMS and platform identification.",
-    tags: ["Joomla 4–6"],
+    tags: ["Joomla 5–6"],
     jed: null
   },
   {
@@ -84,6 +91,7 @@ const projects = [
     logo: "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/logo.png",
     preview: "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/fgstripcomments_banner.svg",
     compatibility: ["J5","J6"],
+    php: "8.1+",
     description: "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
     tags: ["Joomla 5–6"],
     jed: "https://extensions.joomla.org/extension/extension-specific/extensions-specific-non-sorted/strip-comments/"
@@ -161,7 +169,16 @@ function cardTemplate(project, repoData = {}) {
         <span><strong>${escapeHtml(release)}</strong> latest release</span>
         <span>★ ${escapeHtml(stars)}</span>
         <span>↓ ${escapeHtml(formatNumber(downloads))} downloads</span>
-        <span>${escapeHtml(language)}</span>
+        <span class="php-compat" title="Minimum supported PHP version">
+          <img
+            src="./assets/images/php.svg"
+            alt="PHP"
+            class="php-compat-logo"
+            loading="lazy"
+            decoding="async"
+          >
+          <span>${escapeHtml(project.php || language)}</span>
+        </span>
         <span>Updated ${escapeHtml(updated)}</span>
       </div>
 

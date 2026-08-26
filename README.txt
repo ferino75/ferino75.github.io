@@ -1,16 +1,19 @@
-# Local Joomla compatibility logo
+# PHP compatibility logo update
 
 Upload/replace:
 - index.html
 - assets/css/style.css
 - assets/js/app.js
-- assets/images/joomla.svg
+- assets/images/php.svg
+- keep assets/images/joomla.svg
 
-The compatibility row now uses the local file:
-./assets/images/joomla.svg
+The cards now display a local PHP logo plus the plugin's PHP requirement.
 
-Displayed examples:
-[Joomla symbol] 6
-[Joomla symbol] 4 · 5 · 6
+Examples:
+- PHP logo 8.1+
+- PHP logo 7.4+
+- AutoLightbox: 7.4+ / 8.3+ native
+- Email Remover: 7.4+ / 8.1+ native
 
-The SVG is the Joomla brand icon from Font Awesome Free.
+Note:
+FG Remove Generator is corrected to Joomla 5–6 because its current README says it requires Joomla 5.0+ and is not compatible with Joomla 4.

@@ -344,3 +344,18 @@
     }
 
 .status-centered { justify-content: center; margin-top: 18px; }
+
+
+    .php-compat {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .php-compat-logo {
+      width: 24px;
+      height: 14px;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
