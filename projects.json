@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-26T10:03:50.304Z"
+    "generated_at": "2026-08-26T13:16:17.063Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -61,8 +61,8 @@
     "plg_fgeditorswitcher": {
       "html_url": "https://github.com/ferino75/plg_fgeditorswitcher",
       "stargazers_count": 0,
-      "updated_at": "2026-08-26T09:39:48Z",
-      "pushed_at": "2026-08-26T09:36:45Z",
+      "updated_at": "2026-08-26T10:43:29Z",
+      "pushed_at": "2026-08-26T10:40:24Z",
       "language": "PHP",
       "release_tag": "v2.3.0",
       "release_html_url": "https://github.com/ferino75/plg_fgeditorswitcher/releases/tag/v2.3.0",
