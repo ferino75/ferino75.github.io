@@ -36,6 +36,7 @@ jobs:
               "plg_system_fgadminlogincustom",
               "plg_system_fgofflineipwhitelist",
               "plg_system_fgemailremover",
+              "plg_fgeditorswitcher",
               "plg_system_fgstripcomments"
             ];
 
@@ -58,9 +59,6 @@ jobs:
                 if (error.status !== 404) throw error;
               }
 
-              // Sum all attached release asset downloads across the repository.
-              // GitHub-generated "Source code (zip/tar.gz)" archives are not assets
-              // and therefore are not included in this metric.
               const releases = await github.paginate(
                 github.rest.repos.listReleases,
                 { owner, repo, per_page: 100 }

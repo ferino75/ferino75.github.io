@@ -56,6 +56,17 @@ const projects = [
     jed: "https://extensions.joomla.org/extension/access-a-security/site-security/email-remover/"
   },
   {
+    repo: "plg_fgeditorswitcher",
+    name: "FG Editor Switcher",
+    category: "Administration",
+    logo: "https://raw.githubusercontent.com/ferino75/plg_fgeditorswitcher/master/assets/logo.png",
+    preview: null,
+    compatibility: ["J4","J5","J6"],
+    description: "Switch between installed Joomla editors directly from the edit screen while preserving unsaved content and your preferred editor choice.",
+    tags: ["Joomla 4.2–6"],
+    jed: null
+  },
+  {
     repo: "plg_system_fgstripcomments",
     name: "FG Strip Comments",
     category: "Administration",
