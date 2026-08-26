@@ -169,29 +169,35 @@ function cardTemplate(project, repoData = {}) {
         <span><strong>${escapeHtml(release)}</strong> latest release</span>
         <span>★ ${escapeHtml(stars)}</span>
         <span>↓ ${escapeHtml(formatNumber(downloads))} downloads</span>
-        <span class="php-compat" title="Minimum supported PHP version">
-          <img
-            src="./assets/images/php.svg"
-            alt="PHP"
-            class="php-compat-logo"
-            loading="lazy"
-            decoding="async"
-          >
-          <span>${escapeHtml(project.php || language)}</span>
-        </span>
+        <span>${escapeHtml(language)}</span>
         <span>Updated ${escapeHtml(updated)}</span>
       </div>
 
       <div class="card-actions">
         <span class="compat">
-          <img
-            src="./assets/images/joomla.svg"
-            alt="Joomla"
-            class="joomla-compat-logo"
-            loading="lazy"
-            decoding="async"
-          >
-          <span>${project.compatibility.map(version => version.replace(/^J/, "")).join(" · ")}</span>
+          <span class="compat-item" title="Supported Joomla versions">
+            <img
+              src="./assets/images/joomla.svg"
+              alt="Joomla"
+              class="joomla-compat-logo"
+              loading="lazy"
+              decoding="async"
+            >
+            <span>${project.compatibility.map(version => version.replace(/^J/, "")).join(" · ")}</span>
+          </span>
+
+          <span class="compat-separator" aria-hidden="true">|</span>
+
+          <span class="compat-item" title="Minimum supported PHP version">
+            <img
+              src="./assets/images/php.svg"
+              alt="PHP"
+              class="php-compat-logo"
+              loading="lazy"
+              decoding="async"
+            >
+            <span>${escapeHtml(project.php || language)}</span>
+          </span>
         </span>
         ${downloadButton}
         ${releaseButton}

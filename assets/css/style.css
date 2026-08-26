@@ -275,10 +275,22 @@
       margin: 0 0 6px;
       display: flex;
       align-items: center;
-      gap: 7px;
+      flex-wrap: wrap;
+      gap: 8px;
       color: var(--muted);
       font-size: .82rem;
       font-weight: 650;
+    }
+
+    .compat-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .compat-separator {
+      color: var(--border-hover);
+      font-weight: 400;
     }
 
     .joomla-compat-logo {
@@ -345,12 +357,6 @@
 
 .status-centered { justify-content: center; margin-top: 18px; }
 
-
-    .php-compat {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
 
     .php-compat-logo {
       width: 24px;
