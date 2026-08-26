@@ -74,6 +74,7 @@ jobs:
                 html_url: data.html_url,
                 stargazers_count: data.stargazers_count,
                 updated_at: data.updated_at,
+                pushed_at: data.pushed_at,
                 language: data.language,
                 release_tag: releaseTag,
                 release_html_url: releaseHtmlUrl,

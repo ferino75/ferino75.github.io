@@ -110,7 +110,7 @@ function cardTemplate(project, repoData = {}) {
   const language = repoData.language || "PHP";
   const stars = repoData.stargazers_count ?? 0;
   const downloads = repoData.download_count ?? 0;
-  const updated = formatDate(repoData.updated_at);
+  const updated = formatDate(repoData.pushed_at || repoData.updated_at);
 
   const preview = project.preview
     ? `<div class="preview has-image"><img src="${escapeHtml(project.preview)}" alt="${escapeHtml(project.name)} screenshot" loading="lazy" decoding="async"></div>`
@@ -166,7 +166,21 @@ function cardTemplate(project, repoData = {}) {
 }
 
 function renderProjects(repoMap = {}) {
-  projectGrid.innerHTML = projects.map(p => cardTemplate(p, repoMap[p.repo] || {})).join("");
+  const sortedProjects = [...projects].sort((a, b) => {
+    const dateA = repoMap[a.repo]?.pushed_at || repoMap[a.repo]?.updated_at || "";
+    const dateB = repoMap[b.repo]?.pushed_at || repoMap[b.repo]?.updated_at || "";
+
+    // Projects without live metadata stay below projects with a known push date.
+    if (!dateA && !dateB) return a.name.localeCompare(b.name);
+    if (!dateA) return 1;
+    if (!dateB) return -1;
+
+    return new Date(dateB) - new Date(dateA);
+  });
+
+  projectGrid.innerHTML = sortedProjects
+    .map(p => cardTemplate(p, repoMap[p.repo] || {}))
+    .join("");
 }
 
 function renderCompatibility() {
