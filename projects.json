@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-26T20:01:49.403Z"
+    "generated_at": "2026-08-27T08:14:38.196Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -50,13 +50,13 @@
     "plg_system_fgemailremover": {
       "html_url": "https://github.com/ferino75/plg_system_fgemailremover",
       "stargazers_count": 0,
-      "updated_at": "2026-08-26T18:11:39Z",
-      "pushed_at": "2026-08-26T20:00:26Z",
+      "updated_at": "2026-08-27T07:02:47Z",
+      "pushed_at": "2026-08-27T07:01:43Z",
       "language": "PHP",
-      "release_tag": "j46-jv1.7.0",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-jv1.7.0",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-jv1.7.0",
-      "download_count": 47
+      "release_tag": "j46-v1.7.10",
+      "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-v1.7.10",
+      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-v1.7.10",
+      "download_count": 49
     },
     "plg_fgeditorswitcher": {
       "html_url": "https://github.com/ferino75/plg_fgeditorswitcher",
@@ -78,7 +78,7 @@
       "release_tag": "v1.5.2",
       "release_html_url": "https://github.com/ferino75/plg_system_fgremovegenerator/releases/tag/v1.5.2",
       "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgremovegenerator/zipball/v1.5.2",
-      "download_count": 6
+      "download_count": 7
     },
     "plg_system_fgstripcomments": {
       "html_url": "https://github.com/ferino75/plg_system_fgstripcomments",
