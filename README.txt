@@ -1,15 +1,19 @@
-# Inline Joomla + PHP compatibility
+projects.json is now the single source of truth.
 
-Upload/replace:
-- index.html
-- assets/css/style.css
-- assets/js/app.js
+To add a project, add only one new object under "projects" in projects.json.
+Required manual fields:
+name, category, logo, preview, compatibility, php, description, tags, jed, featured
 
-Keep:
-- assets/images/joomla.svg
-- assets/images/php.svg
+The workflow automatically fills/updates:
+html_url, stargazers_count, updated_at, pushed_at, language,
+release_tag, release_html_url, release_zip_url, download_count
 
-The compatibility row now renders like:
-[Joomla logo] 5 · 6 | [PHP logo] 8.1+
+Because projects.json is included in the workflow push paths, committing a new
+project automatically triggers Update project data.
 
-PHP is no longer shown in the metadata row below the description.
+The page automatically updates:
+- cards
+- category filters
+- compatibility rows
+- compatibility columns
+- ordering by pushed_at

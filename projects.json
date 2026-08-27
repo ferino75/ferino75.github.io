@@ -1,95 +1,149 @@
 {
   "_meta": {
-    "generated_at": "2026-08-27T08:14:38.196Z"
+    "generated_at": null
   },
   "projects": {
     "plg_content_fgautolightbox": {
-      "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-26T19:21:48Z",
-      "pushed_at": "2026-08-26T18:46:01Z",
-      "language": "PHP",
-      "release_tag": "v2.3.8",
-      "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.8",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_content_fgautolightbox/zipball/v2.3.8",
-      "download_count": 38
+      "name": "FG AutoLightbox",
+      "category": "Content",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_content_fgautolightbox/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J3.10",
+        "J4",
+        "J5",
+        "J6"
+      ],
+      "php": "7.4+ / 8.3+ native",
+      "description": "Automatically turns article images into a responsive, accessible lightbox without changing the editor workflow.",
+      "tags": [
+        "Joomla 3.10–6"
+      ],
+      "jed": null,
+      "featured": true
     },
     "pkg_fgbackendlangswitcher": {
-      "html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-24T18:00:15Z",
-      "pushed_at": "2026-08-24T18:01:45Z",
-      "language": "PHP",
-      "release_tag": "v1.2.20",
-      "release_html_url": "https://github.com/ferino75/pkg_fgbackendlangswitcher/releases/tag/v1.2.20",
-      "release_zip_url": "https://api.github.com/repos/ferino75/pkg_fgbackendlangswitcher/zipball/v1.2.20",
-      "download_count": 14
+      "name": "FG Backend LangSwitcher",
+      "category": "Administration",
+      "logo": "https://raw.githubusercontent.com/ferino75/pkg_fgbackendlangswitcher/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J4",
+        "J5",
+        "J6"
+      ],
+      "php": "7.4+",
+      "description": "Lets each Joomla administrator switch the backend language for their own session without changing the site's global language.",
+      "tags": [
+        "Joomla 4–6"
+      ],
+      "jed": null,
+      "featured": false
     },
     "plg_system_fgadminlogincustom": {
-      "html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-26T19:40:33Z",
-      "pushed_at": "2026-08-26T18:56:18Z",
-      "language": "PHP",
-      "release_tag": "v1.18.0",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgadminlogincustom/releases/tag/v1.18.0",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgadminlogincustom/zipball/v1.18.0",
-      "download_count": 15
+      "name": "FG Admin Login Customizer",
+      "category": "Administration",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_system_fgadminlogincustom/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J6"
+      ],
+      "php": "8.1+",
+      "description": "Customize the Joomla administrator login screen with your own branding, colours, background and front-end styling.",
+      "tags": [
+        "Joomla 6"
+      ],
+      "jed": null,
+      "featured": false
     },
     "plg_system_fgofflineipwhitelist": {
-      "html_url": "https://github.com/ferino75/plg_system_fgofflineipwhitelist",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-25T17:17:36Z",
-      "pushed_at": "2026-08-25T17:12:48Z",
-      "language": "PHP",
-      "release_tag": "v1.1.3",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgofflineipwhitelist/releases/tag/v1.1.3",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgofflineipwhitelist/zipball/v1.1.3",
-      "download_count": 12
+      "name": "FG Offline IP Whitelist",
+      "category": "Security",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_system_fgofflineipwhitelist/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J4",
+        "J5",
+        "J6"
+      ],
+      "php": "8.0+",
+      "description": "Allow trusted IP addresses or networks to access a Joomla site while the public frontend is in Offline mode.",
+      "tags": [
+        "IPv4 · IPv6 · CIDR"
+      ],
+      "jed": null,
+      "featured": false
     },
     "plg_system_fgemailremover": {
-      "html_url": "https://github.com/ferino75/plg_system_fgemailremover",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-27T07:02:47Z",
-      "pushed_at": "2026-08-27T07:01:43Z",
-      "language": "PHP",
-      "release_tag": "j46-v1.7.10",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-v1.7.10",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-v1.7.10",
-      "download_count": 49
+      "name": "FG Email Remover",
+      "category": "Privacy",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_system_fgemailremover/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J3.10",
+        "J4",
+        "J5",
+        "J6"
+      ],
+      "php": "7.4+ / 8.1+ native",
+      "description": "Removes email addresses from public HTML output so literal addresses do not reach automated spam harvesters.",
+      "tags": [
+        "Joomla 3.10–6"
+      ],
+      "jed": "https://extensions.joomla.org/extension/access-a-security/site-security/email-remover/",
+      "featured": false
     },
     "plg_fgeditorswitcher": {
-      "html_url": "https://github.com/ferino75/plg_fgeditorswitcher",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-26T10:43:29Z",
-      "pushed_at": "2026-08-26T10:40:24Z",
-      "language": "PHP",
-      "release_tag": "v2.3.0",
-      "release_html_url": "https://github.com/ferino75/plg_fgeditorswitcher/releases/tag/v2.3.0",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_fgeditorswitcher/zipball/v2.3.0",
-      "download_count": 27
+      "name": "FG Editor Switcher",
+      "category": "Administration",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_fgeditorswitcher/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J4",
+        "J5",
+        "J6"
+      ],
+      "php": "7.4+",
+      "description": "Switch between installed Joomla editors directly from the edit screen while preserving unsaved content and your preferred editor choice.",
+      "tags": [
+        "Joomla 4.2–6"
+      ],
+      "jed": null,
+      "featured": false
     },
     "plg_system_fgremovegenerator": {
-      "html_url": "https://github.com/ferino75/plg_system_fgremovegenerator",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-26T19:02:19Z",
-      "pushed_at": "2026-08-26T18:40:45Z",
-      "language": "PHP",
-      "release_tag": "v1.5.2",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgremovegenerator/releases/tag/v1.5.2",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgremovegenerator/zipball/v1.5.2",
-      "download_count": 7
+      "name": "FG Remove Generator",
+      "category": "Security",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_system_fgremovegenerator/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J5",
+        "J6"
+      ],
+      "php": "8.1+",
+      "description": "Removes Joomla generator metadata and optional fingerprinting HTTP response headers to reduce passive CMS and platform identification.",
+      "tags": [
+        "Joomla 5–6"
+      ],
+      "jed": null,
+      "featured": false
     },
     "plg_system_fgstripcomments": {
-      "html_url": "https://github.com/ferino75/plg_system_fgstripcomments",
-      "stargazers_count": 0,
-      "updated_at": "2026-08-26T19:24:34Z",
-      "pushed_at": "2026-08-26T18:54:17Z",
-      "language": "PHP",
-      "release_tag": "v2.0.1",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgstripcomments/releases/tag/v2.0.1",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgstripcomments/zipball/v2.0.1",
-      "download_count": 10
+      "name": "FG Strip Comments",
+      "category": "Administration",
+      "logo": "https://raw.githubusercontent.com/ferino75/plg_system_fgstripcomments/master/assets/logo.png",
+      "preview": null,
+      "compatibility": [
+        "J5",
+        "J6"
+      ],
+      "php": "8.1+",
+      "description": "Adds private markers to Joomla content that remain visible to administrators but are removed from the public frontend.",
+      "tags": [
+        "Joomla 5–6"
+      ],
+      "jed": "https://extensions.joomla.org/extension/extension-specific/extensions-specific-non-sorted/strip-comments/",
+      "featured": false
     }
   }
 }
