@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-28T11:21:33.188Z"
+    "generated_at": "2026-08-28T22:17:58.965Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -130,13 +130,13 @@
       "featured": false,
       "html_url": "https://github.com/ferino75/plg_system_fgemailremover",
       "stargazers_count": 0,
-      "updated_at": "2026-08-27T19:03:09Z",
-      "pushed_at": "2026-08-27T19:01:32Z",
+      "updated_at": "2026-08-28T19:10:09Z",
+      "pushed_at": "2026-08-28T19:03:29Z",
       "language": "PHP",
-      "release_tag": "j46-v1.7.11",
-      "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-v1.7.11",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-v1.7.11",
-      "download_count": 51
+      "release_tag": "j46-v1.8.1",
+      "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-v1.8.1",
+      "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-v1.8.1",
+      "download_count": 53
     },
     "plg_fgeditorswitcher": {
       "name": "FG Editor Switcher",
