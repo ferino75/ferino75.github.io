@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T07:02:50.364Z"
+    "generated_at": "2026-08-29T16:42:13.360Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -23,8 +23,8 @@
       "featured": true,
       "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
       "stargazers_count": 0,
-      "updated_at": "2026-08-26T19:21:48Z",
-      "pushed_at": "2026-08-26T18:46:01Z",
+      "updated_at": "2026-08-29T12:58:27Z",
+      "pushed_at": "2026-08-29T12:58:20Z",
       "language": "PHP",
       "release_tag": "v2.3.8",
       "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.8",
