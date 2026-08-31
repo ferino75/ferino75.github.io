@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-31T13:46:29.895Z"
+    "generated_at": "2026-08-31T22:49:15.197Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -163,7 +163,7 @@
       "release_tag": "v2.3.0",
       "release_html_url": "https://github.com/ferino75/plg_fgeditorswitcher/releases/tag/v2.3.0",
       "release_zip_url": "https://api.github.com/repos/ferino75/plg_fgeditorswitcher/zipball/v2.3.0",
-      "download_count": 28
+      "download_count": 29
     },
     "plg_system_fgremovegenerator": {
       "name": "FG Remove Generator",
