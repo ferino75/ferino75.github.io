@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-29T16:42:13.360Z"
+    "generated_at": "2026-08-31T13:46:29.895Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -136,7 +136,7 @@
       "release_tag": "j46-v1.8.1",
       "release_html_url": "https://github.com/ferino75/plg_system_fgemailremover/releases/tag/j46-v1.8.1",
       "release_zip_url": "https://api.github.com/repos/ferino75/plg_system_fgemailremover/zipball/j46-v1.8.1",
-      "download_count": 53
+      "download_count": 55
     },
     "plg_fgeditorswitcher": {
       "name": "FG Editor Switcher",
