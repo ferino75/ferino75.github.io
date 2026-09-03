@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-09-03T11:11:59.815Z"
+    "generated_at": "2026-09-03T16:24:17.624Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -23,13 +23,13 @@
       "featured": true,
       "html_url": "https://github.com/ferino75/plg_content_fgautolightbox",
       "stargazers_count": 0,
-      "updated_at": "2026-08-29T12:58:27Z",
-      "pushed_at": "2026-08-29T12:58:20Z",
+      "updated_at": "2026-09-03T14:13:46Z",
+      "pushed_at": "2026-09-03T14:10:12Z",
       "language": "PHP",
-      "release_tag": "v2.3.8",
-      "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.8",
-      "release_zip_url": "https://api.github.com/repos/ferino75/plg_content_fgautolightbox/zipball/v2.3.8",
-      "download_count": 39
+      "release_tag": "v2.3.9",
+      "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.9",
+      "release_zip_url": "https://api.github.com/repos/ferino75/plg_content_fgautolightbox/zipball/v2.3.9",
+      "download_count": 40
     },
     "pkg_fgbackendlangswitcher": {
       "name": "FG Backend LangSwitcher",
