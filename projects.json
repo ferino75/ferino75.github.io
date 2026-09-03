@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-09-01T16:38:12.613Z"
+    "generated_at": "2026-09-03T11:11:59.815Z"
   },
   "projects": {
     "plg_content_fgautolightbox": {
@@ -29,7 +29,7 @@
       "release_tag": "v2.3.8",
       "release_html_url": "https://github.com/ferino75/plg_content_fgautolightbox/releases/tag/v2.3.8",
       "release_zip_url": "https://api.github.com/repos/ferino75/plg_content_fgautolightbox/zipball/v2.3.8",
-      "download_count": 38
+      "download_count": 39
     },
     "pkg_fgbackendlangswitcher": {
       "name": "FG Backend LangSwitcher",
